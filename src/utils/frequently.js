@@ -1,6 +1,6 @@
 import store from './store'
 
-const DEFAULTS = []
+const DEFAULTS = ['']
 
 let frequently, initialized
 let defaults = {}
