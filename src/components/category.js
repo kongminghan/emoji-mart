@@ -123,7 +123,12 @@ export default class Category extends React.Component {
           .filter((id) => !!getData(id, null, null, this.data))
       }
 
-      if (emojis && emojis.length === 0 && frequentlyUsed.length > 0) {
+      if (
+        emojis !== null &&
+        emojis.length === 0 &&
+        frequentlyUsed !== null &&
+        frequentlyUsed.length > 0
+      ) {
         return null
       }
     }
