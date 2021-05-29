@@ -1,23 +1,6 @@
 import store from './store'
 
-const DEFAULTS = [
-  '+1',
-  'grinning',
-  'kissing_heart',
-  'heart_eyes',
-  'laughing',
-  'stuck_out_tongue_winking_eye',
-  'sweat_smile',
-  'joy',
-  'scream',
-  'disappointed',
-  'unamused',
-  'weary',
-  'sob',
-  'sunglasses',
-  'heart',
-  'poop',
-]
+const DEFAULTS = []
 
 let frequently, initialized
 let defaults = {}
@@ -47,8 +30,10 @@ function get(perLine) {
     const result = []
 
     for (let i = 0; i < perLine; i++) {
-      defaults[DEFAULTS[i]] = perLine - i
-      result.push(DEFAULTS[i])
+      if (i < DEFAULTS.length) {
+        defaults[DEFAULTS[i]] = perLine - i
+        result.push(DEFAULTS[i])
+      }
     }
 
     return result
