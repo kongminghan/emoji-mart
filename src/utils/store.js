@@ -1,4 +1,4 @@
-var NAMESPACE = 'emoji-mart'
+var NAMESPACE = 'squeak-emoji'
 
 var isLocalStorageSupported =
   typeof window !== 'undefined' && 'localStorage' in window
