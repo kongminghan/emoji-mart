@@ -106,6 +106,10 @@ export default class Category extends React.Component {
       let { custom } = this.props
       let frequentlyUsed = recent || frequently.get(perLine)
 
+      if (frequentlyUsed && frequentlyUsed.length > 20) {
+        frequentlyUsed = frequentlyUsed.slice(0, 20)
+      }
+
       if (frequentlyUsed.length) {
         emojis = frequentlyUsed
           .map((id) => {
@@ -119,7 +123,7 @@ export default class Category extends React.Component {
           .filter((id) => !!getData(id, null, null, this.data))
       }
 
-      if (emojis.length === 0 && frequentlyUsed.length > 0) {
+      if (emojis && emojis.length === 0 && frequentlyUsed.length > 0) {
         return null
       }
     }

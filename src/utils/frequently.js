@@ -29,11 +29,13 @@ function get(perLine) {
 
     const result = []
 
+    if (perLine > DEFAULTS.length) {
+      return result
+    }
+
     for (let i = 0; i < perLine; i++) {
-      if (i < DEFAULTS.length) {
-        defaults[DEFAULTS[i]] = perLine - i
-        result.push(DEFAULTS[i])
-      }
+      defaults[DEFAULTS[i]] = perLine - i
+      result.push(DEFAULTS[i])
     }
 
     return result
